@@ -11,7 +11,7 @@ source 'https://rubygems.org'
   # Heroku only supports Postgres, so I'll use that database in my production environment
   group :production do
     # Use pg as the production database for Active Record
-    gem 'pg'
+    gem 'pg', '~> 0.18'
     gem 'rails_12factor'
   end
 
