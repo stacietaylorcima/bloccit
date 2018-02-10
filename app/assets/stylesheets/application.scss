@@ -5,11 +5,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
+body {
   font-family: 'Montserrat', sans-serif;
   margin: 25px;
 }
 
-p{
+p {
   margin-bottom: 25px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 30px;
 }
