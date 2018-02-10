@@ -1,4 +1,14 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<h1>About Bloccit</h1>
+<p>Create by: Stacie Taylor-Cima</p>
 
+<!-- This is the button I created using CSS only.
+I prefer the way this one looks,
+but wish it would click down like an actual button.  -->
 <%= link_to "Follow me!", "http://twitter.com/simply_cima", :target => "_blank", class: "social-btn" %>
+
+<!-- This is the way Bloc suggests doing it.
+I like that it's an actual button, but it's inheritting some undesirable properties.
+Can I override Bootstrap and go with my own design?
+Also, it's not actually linking to my Twitter.
+Where am I going wrong here?  -->
+<button class="social-btn"><%= link_to "Follow me!", "https://www.twitter.com/simply_cima" =%></button>
