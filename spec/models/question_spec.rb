@@ -7,4 +7,5 @@ RSpec.describe Question, type: :model do
     it "has title and body attributes" do
       expect(question).to have_attributes(title: "New Question Title", body: "New Question Body")
     end
-  endend
+  end
+end
