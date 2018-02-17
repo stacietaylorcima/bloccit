@@ -22,7 +22,7 @@ Post.find_or_create_by(title: "Stuck on Checkpoint 18", body: "I can't get npm t
 puts "#{Post.count}"
 
 puts "#{Comment.count}"
-Comment.find_or_create_by(body: "Oh brother. Let's troubleshoot!", post_id: 51)
+Comment.find_or_create_by(body: "Oh brother. Let's troubleshoot!", post: post)
 puts "#{Comment.count}"
 
 puts "Seed finished"
