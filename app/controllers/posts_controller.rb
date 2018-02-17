@@ -5,13 +5,14 @@ class PostsController < ApplicationController
       if index % 5 == 0
         post.title = "SPAM"
       end
-    end 
+    end
   end
 
   def show
   end
 
   def new
+    @post = Post.new
   end
 
   def edit
