@@ -40,12 +40,22 @@ RSpec.describe AdvertisementsController, type: :controller do
     end
   end
 
-  # describe "GET #new" do
-  #   it "returns http success" do
-  #     get :new
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe "GET #new" do
+    it "returns http success" do
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+
+    it "renders the #new view" do
+      get :new
+      expect(response).to render_template :new
+    end
+
+    it "instantiates @advertisement" do
+      get :new
+      expect(assigns(:advertisement)).not_to be_nil
+    end
+  end
   #
   # describe "GET #create" do
   #   it "returns http success" do
