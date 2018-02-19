@@ -36,7 +36,7 @@ RSpec.describe AdvertisementsController, type: :controller do
 
     it "assigns my_ad to @advertisement" do
       get :show, params: { id: my_ad.id }
-      expect(assigns(:advertisement)).to eq(my_post)
+      expect(assigns(:advertisement)).to eq(my_ad)
     end
   end
 

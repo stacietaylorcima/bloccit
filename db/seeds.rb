@@ -18,7 +18,7 @@ posts = Post.all
 end
 
 puts "#{Post.count}"
-Post.find_or_create_by(title: "Stuck on Checkpoint 18", body: "I can't get npm to install correctly!")
+post = Post.find_or_create_by(title: "Stuck on Checkpoint 18", body: "I can't get npm to install correctly!")
 puts "#{Post.count}"
 
 puts "#{Comment.count}"
