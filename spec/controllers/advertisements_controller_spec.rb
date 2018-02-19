@@ -17,7 +17,7 @@ RSpec.describe AdvertisementsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "assigns [my_ad] to @advertisements" do
+    it "assigns my_ad to @advertisements" do
       get :index
       expect(assigns(:advertisements)).to eq([my_ad])
     end
@@ -25,19 +25,19 @@ RSpec.describe AdvertisementsController, type: :controller do
 
   describe "GET #show" do
     it "returns http success" do
-      get :show {id: my_ad.id}
+      get :show, params: { id: my_ad.id }
       expect(response).to have_http_status(:success)
     end
 
     it "renders the #show view" do
-      get :show {id: my_ad.id}
+      get :show, params: { id: my_ad.id }
       expect(response).to render_template :show
     end
 
     it "assigns my_ad to @advertisement" do
-      get :show {id: my_ad.id}
-      expect(assigns(:advertisement)).to eq(my_ad)
-    end 
+      get :show, params: { id: my_ad.id }
+      expect(assigns(:advertisement)).to eq(my_post)
+    end
   end
 
   # describe "GET #new" do
