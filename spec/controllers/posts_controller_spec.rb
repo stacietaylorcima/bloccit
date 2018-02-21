@@ -96,8 +96,8 @@ RSpec.describe PostsController, type: :controller do
 
      updated_post = assigns(:post)
      expect(updated_post.id).to eq my_post.id
-     expect(updated_post.title).to eq my_post.title
-     expect(updated_post.body).to eq my_post.body
+     expect(updated_post.title).to eq new_title
+     expect(updated_post.body).to eq new_body
    end
 
    it "redirects to the updated post" do
