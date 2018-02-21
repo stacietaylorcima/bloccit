@@ -37,6 +37,32 @@ RSpec.describe QuestionsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
+
+    it "renders the #new view" do
+      get :new
+      expect(response).to render_template :new
+    end
+
+    it "instantiates @question" do
+      get :new
+      expect(assigns(:question)).not_to be_nil
+    end
+  end
+
+  describe "POST create" do
+    it "increases the number of Question by 1" do
+      expect{ question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } } }.to change(Post,:count).by(1)
+    end
+
+    it "assigns the new question to @question" do
+      question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } }
+      expect(assigns(:post)).to eq Post.last
+    end
+
+    it "redirects to the new post" do
+      question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } }
+      expect(response).to redirect_to Post.last
+    end
   end
 
   describe "GET edit" do
