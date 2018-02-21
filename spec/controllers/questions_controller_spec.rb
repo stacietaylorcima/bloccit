@@ -51,17 +51,16 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe "POST create" do
     it "increases the number of Question by 1" do
-      expect{ question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } } }.to change(Post,:count).by(1)
+      expect{my_question}.to change(Question,:count).by(1)
     end
 
     it "assigns the new question to @question" do
-      question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } }
-      expect(assigns(:post)).to eq Post.last
+      expect(assigns(:my_question)).to eq Question.last
     end
 
-    it "redirects to the new post" do
-      question :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } }
-      expect(response).to redirect_to Post.last
+    it "redirects to the new question" do
+      post :create, params: { question: { title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false } }
+      expect(response).to redirect_to Question.last
     end
   end
 
