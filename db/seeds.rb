@@ -1,5 +1,14 @@
 require 'random_data'
 
+# Create Questions
+50.times do
+  Question.create!(
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
+    resolved: false
+  )
+end
+
 # Create Advertisements
 50.times do
   Advertisement.create!(
@@ -8,7 +17,6 @@ require 'random_data'
     price: 99
   )
 end
-
 
 # Create Posts
 50.times do
@@ -39,3 +47,4 @@ puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "#{Advertisement.count} advertisements created"
+puts "#{Question.count} questions created"
