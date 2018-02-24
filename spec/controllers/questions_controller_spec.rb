@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
-  let(:my_question) { Question.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, resolved: false) }
+  let(:my_question) do
+    Question.create!(
+      title: RandomData.random_sentence,
+      body: RandomData.random_paragraph,
+      resolved: false
+    )
+  end
 
   describe "GET index" do
     it "returns http success" do
