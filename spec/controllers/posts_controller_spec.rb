@@ -44,7 +44,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "renders the #show view" do
-      get :show, params: { id: my_post.id }
       get :show, params: { topic_id: my_topic.id, id: my_post.id }
     end
 
@@ -61,7 +60,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "renders the #edit view" do
-      get :edit, topic_id: my_topic.id, id: my_post.id
+      get :edit, params: { topic_id: my_topic.id, id: my_post.id }
       expect(response).to render_template :edit
     end
 
