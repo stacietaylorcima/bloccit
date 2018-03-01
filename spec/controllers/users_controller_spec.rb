@@ -53,5 +53,10 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: new_user_attributes }
       expect(assigns(:user).password_confirmation).to eq new_user_attributes[:password_confirmation]
     end
+
+    # it "redirects to a confirmation" do
+    #   get :confirm
+    #   expect(response).to have_http_status(:success)
+    # end
   end
 end
