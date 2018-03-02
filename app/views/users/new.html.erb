@@ -13,6 +13,7 @@
           </ul>
         </div>
       <% end %>
+
       <%= form_group_tag(@user.errors[:name]) do %>
         <%= f.label :name %>
         <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>

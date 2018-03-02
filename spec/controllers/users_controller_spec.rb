@@ -58,10 +58,39 @@ RSpec.describe UsersController, type: :controller do
       post :create, params: { user: new_user_attributes }
       expect(session[:user_id]).to eq assigns(:user).id
     end
-    
-    # it "redirects to a confirmation" do
-    #   get :confirm
-    #   expect(response).to have_http_status(:success)
+  end
+
+  describe "POST confirm" do
+    it 'returns http success' do
+      post :confirm, params: { user: new_user_attributes }
+      expect(response).to have_http_status :success
+    end
+
+    it "creates a new user" do
+      expect(post :confirm, params: { user: new_user_attributes })
+    end
+
+    it "sets user name properly" do
+      post :confirm, params: { user: new_user_attributes }
+      expect(assigns(:user).name).to eq new_user_attributes[:name]
+    end
+
+    it "sets user email properly" do
+      post :confirm, params: { user: new_user_attributes }
+      expect(assigns(:user).email).to eq new_user_attributes[:email]
+    end
+
+    it "sets user password properly" do
+      post :confirm, params: { user: new_user_attributes }
+      expect(assigns(:user).password).to eq new_user_attributes[:password]
+    end
+
+    it "sets user password_confirmation properly" do
+      post :confirm, params: { user: new_user_attributes }
+      expect(assigns(:user).password_confirmation).to eq new_user_attributes[:password_confirmation]
+    end
+
+    # it "redirects to root_path"
     # end
   end
 end
