@@ -9,15 +9,4 @@ module ApplicationHelper
     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
   end
-
-  # def avatar_url(user)
-  #   default_url = “app/assets/images/profile_default.png”
-  #
-  #   if(user.present?)
-  #     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
-  #     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
-  #   else
-  #     return default_url
-  #   end
-  # end
 end
