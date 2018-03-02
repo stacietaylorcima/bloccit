@@ -5,8 +5,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+body, html {
   font-family: 'Montserrat', sans-serif;
+  height: 100%;
   margin: 25px;
 }
 
@@ -17,7 +18,7 @@ p {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-bottom: 5px;
 }
 
 li {
@@ -27,4 +28,23 @@ li {
 
 .nav-tabs {
    border: none !important;
+}
+
+.user-info {
+  margin-top: -40px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.gravatar {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  box-shadow: 1.5px 1px 4px #cecece;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+.name-signout {
+  margin: 10px;
 }
