@@ -1,4 +1,19 @@
 require 'random_data'
+# Create Users
+5.times do
+  User.create!(
+    name: RandomData.random_name,
+    email: RandomData.random_email,
+    password: RandomData.random_sentence
+  )
+end
+users = User.all
+
+user = User.first
+user.update_attributes!(
+  email: 'stacietaylorcima@gmail.com',
+  password: 'helloworld'
+)
 
 # Create Topics
 15.times do
@@ -30,9 +45,10 @@ end
 # Create Posts
 50.times do
   Post.create!(
-    topic:  topics.sample,
-    title:  RandomData.random_sentence,
-    body:   RandomData.random_paragraph
+    user: users.sample,
+    topic: topics.sample,
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph
   )
 end
 posts = Post.all
@@ -40,9 +56,9 @@ posts = Post.all
 # Create Sponsored Posts
 50.times do
   SponsoredPost.create!(
-    topic:  topics.sample,
-    title:  RandomData.random_sentence,
-    body:   RandomData.random_paragraph,
+    topic: topics.sample,
+    title: RandomData.random_sentence,
+    body: RandomData.random_paragraph,
     price: 99
   )
 end
@@ -55,17 +71,10 @@ end
   )
 end
 
-puts "#{Post.count}"
-post = Post.find_or_create_by(title: "Stuck on Checkpoint 18", body: "I can't get npm to install correctly!")
-puts "#{Post.count}"
-
-puts "#{Comment.count}"
-Comment.find_or_create_by(body: "Oh brother. Let's troubleshoot!", post: @post)
-puts "#{Comment.count}"
-
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "#{Advertisement.count} advertisements created"
 puts "#{Question.count} questions created"
 puts "#{Topic.count} topics created"
+puts "#{User.count} users created"
