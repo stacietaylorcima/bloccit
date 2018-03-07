@@ -23,5 +23,5 @@ class User < ApplicationRecord
       self.name = name_array.join(" ")
     end
   end
-  enum role: [:member, :admin]
+  enum role: [:member, :admin, :moderator]
 end

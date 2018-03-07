@@ -9,4 +9,12 @@ module ApplicationHelper
     gravatar_id = Digest::MD5::hexdigest(user.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
   end
+
+  def user_and_admin? 
+    current_user && current_user.admin?
+  end
+
+  def user_and_admin_or_moderator? (post = nil)
+    current_user && current_user.admin? || current_user.moderator?
+  end
 end
