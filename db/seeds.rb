@@ -62,19 +62,10 @@ end
 end
 posts = Post.all
 
-# Create Sponsored Posts
-50.times do
-  SponsoredPost.create!(
-    topic: topics.sample,
-    title: RandomData.random_sentence,
-    body: RandomData.random_paragraph,
-    price: 99
-  )
-end
-
 # Create Comments
 100.times do
   Comment.create!(
+    user: users.sample,
     post: posts.sample,
     body: RandomData.random_paragraph
   )
