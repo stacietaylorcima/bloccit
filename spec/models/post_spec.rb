@@ -74,6 +74,7 @@ RSpec.describe Post, type: :model do
       end
     end
   end
+
   describe "#create_vote" do
     it "sets the post up_vote to 1" do
       expect(post.up_votes).to eq(1)
@@ -87,6 +88,22 @@ RSpec.describe Post, type: :model do
 
     it "associates the vote with the owner of the post" do
       expect(post.votes.first.user).to eq(post.user)
+    end
+  end
+
+  describe "#create_favorite" do
+    it "favorites the new post" do
+      expect(post.favorites).to be_truthy
+    end
+
+    it "calls #create_favorite when a new post is created" do
+      post = topic.posts.new(title: RandomData.random_sentence, body: RandomData.random_sentence, user: user)
+      expect(post).to receive(:create_favorite)
+      post.save
+    end
+
+    it "associates the favorite with the owner of the post" do
+      expect(post.favorites.first.user).to eq(post.user)
     end
   end
 end

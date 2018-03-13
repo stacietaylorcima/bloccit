@@ -2,9 +2,9 @@ class FavoriteMailer < ApplicationMailer
   default from: "stacietaylorcima@gmail.com"
 
   def new_comment(user, post, comment)
-    headers["Message-ID"] = "<comments/#{comment.id}@your-app-name.example>"
-    headers["In-Reply-To"] = "<post/#{post.id}@your-app-name.example>"
-    headers["References"] = "<post/#{post.id}@your-app-name.example>"
+    headers["Message-ID"] = "<comments/#{comment.id}@https://obscure-thicket-93550.herokuapp.com/>"
+    headers["In-Reply-To"] = "<post/#{post.id}@https://obscure-thicket-93550.herokuapp.com/>"
+    headers["References"] = "<post/#{post.id}@https://obscure-thicket-93550.herokuapp.com/>"
 
     @user = user
     @post = post
@@ -15,9 +15,9 @@ class FavoriteMailer < ApplicationMailer
 
 
   def new_post(post)
-    headers["Message-ID"] = "<posts/#{post.id}@http://localhost:3000/>"
-    headers["In-Reply-To"] = "<post/#{post.id}@http://localhost:3000/>"
-    headers["References"] = "<post/#{post.id}@http://localhost:3000/>"
+    headers["Message-ID"] = "<posts/#{post.id}@https://obscure-thicket-93550.herokuapp.com/>"
+    headers["In-Reply-To"] = "<post/#{post.id}@https://obscure-thicket-93550.herokuapp.com/>"
+    headers["References"] = "<post/#{post.id}@https://obscure-thicket-93550.herokuapp.com/>"
 
     @post = post
 
