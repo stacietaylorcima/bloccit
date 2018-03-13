@@ -22,16 +22,15 @@ ul {
 }
 
 li {
-  display: inline;
   margin-right: 30px;
 }
 
 .nav-tabs {
    border: none !important;
+   display: inline-block;
 }
 
 .user-info {
-  margin-right: 5px;
   display: inline-block;
 }
 
