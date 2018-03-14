@@ -52,3 +52,4 @@ source 'https://rubygems.org'
   gem 'bcrypt'
   gem 'hirb'
   gem 'figaro', '1.0'
+  gem "factory_bot_rails"
