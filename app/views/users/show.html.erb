@@ -4,7 +4,7 @@
       <br />
       <% avatar_url = @user.avatar_url(128) %>
       <% if avatar_url %>
-        <div class="media-left">
+        <div class="media-left gravatar">
           <%= image_tag avatar_url, class: 'media-object' %>
         </div>
       <% end %>
@@ -19,8 +19,24 @@
   </div>
 </div>
 
-<h2>Posts</h2>
-<%= render @user.posts %>
+<% if @user.posts.any? %>
+  <h2>Posts</h2>
+    <%= render @user.posts %>
+  <% else %>
+    <p><%= @user.name %> has not submitted any posts yet.</p>
+<% end %>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+<% if @user.comments.any? %>
+  <h2>Posts</h2>
+    <%= render @user.comments %>
+  <% else %>
+    <p><%= @user.name %> has not submitted any comments yet.</p>
+<% end %>
+
+
+<% if @user.favorites.any? %>
+  <h2>Favorites</h2>
+    <%= render partial: 'users/favorites' %>
+  <% else %>
+    <p><%= "#{@user.name} has not favorited any posts yet." %></p>
+<% end %>
