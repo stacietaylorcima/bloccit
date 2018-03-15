@@ -1,6 +1,6 @@
 <% @favorites.each do |fav| %>
 <div class="media">
-  <div class="pull-left"><%= image_tag fav.post.user.avatar_url(64), class: 'media-object' %></div>
+  <div class="pull-left gravatar"><%= image_tag fav.post.user.avatar_url(64), class: 'media-object' %></div>
   <div class="media-body">
     <h4 class="media-heading">
       <%= link_to fav.post.title, topic_post_path(fav.post.topic, fav.post) %>
