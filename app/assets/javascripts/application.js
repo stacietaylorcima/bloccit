@@ -9,7 +9,7 @@ trackstar.report = function(eventName){
   // initialize a new XMLHttpRequest() (AJAX request)
   var request = new XMLHttpRequest();
   // set the HTTP method to POST, the url of our events endpoint, and allow the request to run asynchronously
-  request.open("POST", "http://localhost:3000/api/events", true);
+  request.open("POST", "https://shielded-garden-20003.herokuapp.com/api/events", true);
   // set the request Content-Type header to 'application/json'
   request.setRequestHeader('Content-Type', 'application/json');
   // send the request
